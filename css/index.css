@@ -1,10 +1,219 @@
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("../fonts/ProximaNova-BoldIt.woff2") format("woff2"), url("../fonts/ProximaNova-BoldIt.woff") format("woff"), url("../fonts/ProximaNova-BoldIt.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url("../fonts/ProximaNova-Regular.woff2") format("woff2"), url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Proxima Nova Rg";
+  line-height: 1;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+header {
+  background-color: #264f83;
+  padding: .875rem 1rem;
+  max-height: 100px;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+header nav .brand-logo {
+  width: 40px;
+}
+
+header nav .brand-logo img {
+  width: 120px;
+}
+
+header nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+}
+
+header nav .menu li {
+  list-style: none;
+  padding: 5px 10px;
+  border-right: 1px solid white;
+  font-size: .875rem;
+}
+
+header nav .menu li:last-child {
+  border: none;
+}
+
+header nav .menu li a {
+  color: white;
+}
+
+.hero-container {
+  height: calc(100vh - 100px);
+  background-color: #000;
+  position: relative;
+}
+
+.hero-container .square {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  background-color: #8bb7db;
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  max-width: 650px;
+  padding: 1.5rem 2.5rem;
+}
+
+.who-container {
+  padding: 2rem;
+}
+
+.who-container .title {
+  text-align: center;
+  color: #2a6ed2;
+  font-size: 1.5rem;
+}
+
+.who-container .desc {
+  text-align: justify;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 10px;
+}
+
+.procedimientos-options-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.procedimientos-options-container .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 33%;
+          flex: 1 0 33%;
+  min-height: 220px;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #dce5ee;
+  cursor: pointer;
+}
+
+.procedimientos-options-container .item .title {
+  line-height: 1;
+  font-size: 1.25rem;
+  color: #333333;
+  font-weight: bolds;
+}
+
+.procedimientos-options-container .item .title small {
+  display: block;
+}
+
+.procedimientos-options-container .item:nth-child(even) {
+  background-color: #8bb7db;
+}
+
+.procedimientos-options-container .item:nth-child(even) .title {
+  color: white;
+}
+
+.procedimientos-content-container {
+  height: 100vh;
+  min-height: 600px;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.procedimientos-content-container .col {
+  width: 40%;
+}
+
+.procedimientos-content-container .col .title {
+  padding-left: 10px;
+  border-left: 4px solid #8bb7db;
+  font-size: 2rem;
+  margin: 0;
+  color: #264f83;
+}
+
+.procedimientos-content-container .col .title small {
+  font-size: 1.25rem;
+  display: block;
+  color: black;
+}
+
+.procedimientos-content-container .col .desc {
+  margin-left: 4px;
+  padding-top: 50px;
+  padding-left: 10px;
 }

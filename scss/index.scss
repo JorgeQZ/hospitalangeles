@@ -1,9 +1,113 @@
+@import "variables";
+@import "fonts";
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $font;
+  line-height: 1;
 }
 
 html,
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+@import "header";
+.hero-container {
+  height: calc(100vh - 100px);
+  background-color: #000;
+  position: relative;
+  .square {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    background-color: #8bb7db;
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    max-width: 650px;
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+.who-container {
+  padding: 2rem;
+  .title {
+    text-align: center;
+    color: $alternate;
+    font-size: 1.5rem;
+  }
+  .desc {
+    text-align: justify;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 10px;
+  }
+}
+
+.procedimientos-options-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  .item {
+    flex: 1 0 33%;
+    min-height: 220px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #dce5ee;
+    cursor: pointer;
+    .title {
+      line-height: 1;
+      font-size: 1.25rem;
+      color: #333333;
+      font-weight: bolds;
+      small {
+        display: block;
+      }
+    }
+    &:nth-child(even) {
+      background-color: #8bb7db;
+      .title {
+        color: white;
+      }
+    }
+  }
+}
+
+.procedimientos-content-container {
+  height: 100vh;
+  min-height: 600px;
+  padding: 3rem;
+  display: flex;
+  .col {
+    width: 40%;
+    .title {
+      padding-left: 10px;
+      border-left: 4px solid #8bb7db;
+      font-size: 2rem;
+      margin: 0;
+      color: $main;
+      small {
+        font-size: 1.25rem;
+        display: block;
+        color: black;
+      }
+    }
+    .desc {
+      margin-left: 4px;
+      padding-top: 50px;
+      padding-left: 10px;
+    }
+  }
 }
