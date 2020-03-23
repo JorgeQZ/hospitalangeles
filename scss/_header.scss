@@ -27,6 +27,12 @@ header {
                 }
                 a {
                     color: white;
+                    position: relative;
+                    &::before{
+                        content: attr(value);
+                        position: absolute;
+                        color: red;
+                    }
                 }
             }
         }
