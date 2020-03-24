@@ -81,17 +81,22 @@ a {
     text-align: center;
     background-color: #dce5ee;
     cursor: pointer;
+    transition: 0.4s all;
     .title {
       height: 70px;
       line-height: 1;
       font-size: 1.5rem;
       color: #333333;
       font-weight: bold;
+      transition: 0.4s all;
       small {
         display: block;
         font-weight: normal;
         font-size: 1rem;
         margin-bottom: 5px;
+        overflow: hidden;
+        transition: 0.4s all;
+        max-height: 40px;
       }
     }
     &:nth-child(even) {
@@ -100,16 +105,39 @@ a {
         color: white;
       }
     }
+
+    &.active,
+    &:hover {
+      background-color: $main;
+      .title {
+        height: auto;
+        color: white;
+        font-size: 1.7rem;
+        small {
+          max-height: 0;
+          opacity: 0;
+        }
+      }
+    }
   }
 }
 
 .procedimientos-content-container {
   min-height: 600px;
+  height: 100vh;
   padding: 4rem 3rem;
+  display: flex;
+  align-items: center;
   .container {
     max-width: 1024px;
     margin: 0 auto;
-    display: flex;
+    display: none;
+    transition: 0.4s ease-out;
+    opacity: 0;
+    &.active {
+      display: flex;
+      opacity: 1;
+    }
     .col {
       &:first-child {
         width: 40%;
@@ -317,7 +345,9 @@ a {
             line-height: 1.2;
             color: white;
             text-indent: 30px;
-            overflow-y: scroll;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-y: auto; /* added css prefix for safari */
           }
           .name {
             max-width: 400px;

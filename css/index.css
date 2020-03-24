@@ -184,6 +184,8 @@ header nav .menu li a {
   text-align: center;
   background-color: #dce5ee;
   cursor: pointer;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .procedimientos-options-container .item .title {
@@ -192,6 +194,8 @@ header nav .menu li a {
   font-size: 1.5rem;
   color: #333333;
   font-weight: bold;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .procedimientos-options-container .item .title small {
@@ -199,6 +203,10 @@ header nav .menu li a {
   font-weight: normal;
   font-size: 1rem;
   margin-bottom: 5px;
+  overflow: hidden;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+  max-height: 40px;
 }
 
 .procedimientos-options-container .item:nth-child(even) {
@@ -209,17 +217,47 @@ header nav .menu li a {
   color: white;
 }
 
+.procedimientos-options-container .item.active, .procedimientos-options-container .item:hover {
+  background-color: #264f83;
+}
+
+.procedimientos-options-container .item.active .title, .procedimientos-options-container .item:hover .title {
+  height: auto;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.procedimientos-options-container .item.active .title small, .procedimientos-options-container .item:hover .title small {
+  max-height: 0;
+  opacity: 0;
+}
+
 .procedimientos-content-container {
   min-height: 600px;
+  height: 100vh;
   padding: 4rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .procedimientos-content-container .container {
   max-width: 1024px;
   margin: 0 auto;
+  display: none;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  opacity: 0;
+}
+
+.procedimientos-content-container .container.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 1;
 }
 
 .procedimientos-content-container .container .col:first-child {
@@ -482,7 +520,10 @@ header nav .menu li a {
   line-height: 1.2;
   color: white;
   text-indent: 30px;
-  overflow-y: scroll;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-y: auto;
+  /* added css prefix for safari */
 }
 
 .testimonios-container .container .testimonios-slider .item .col .name {
