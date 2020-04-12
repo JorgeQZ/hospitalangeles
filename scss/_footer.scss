@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .col {
+        flex: 1 0 20%;
+        padding: 30px;
+    }
+}

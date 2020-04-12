@@ -184,8 +184,8 @@ header nav .menu li a {
   text-align: center;
   background-color: #dce5ee;
   cursor: pointer;
-  -webkit-transition: 0.4s all;
-  transition: 0.4s all;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .procedimientos-options-container .item .title {
@@ -194,8 +194,8 @@ header nav .menu li a {
   font-size: 1.5rem;
   color: #333333;
   font-weight: bold;
-  -webkit-transition: 0.4s all;
-  transition: 0.4s all;
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
 }
 
 .procedimientos-options-container .item .title small {
@@ -204,8 +204,8 @@ header nav .menu li a {
   font-size: 1rem;
   margin-bottom: 5px;
   overflow: hidden;
-  -webkit-transition: 0.4s all;
-  transition: 0.4s all;
+  -webkit-transition: 0.4s all ease-out;
+  transition: 0.4s all ease-out;
   max-height: 40px;
 }
 
@@ -224,10 +224,12 @@ header nav .menu li a {
 .procedimientos-options-container .item.active .title, .procedimientos-options-container .item:hover .title {
   height: auto;
   color: white;
-  font-size: 1.7rem;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 .procedimientos-options-container .item.active .title small, .procedimientos-options-container .item:hover .title small {
+  color: white;
   max-height: 0;
   opacity: 0;
 }
@@ -248,8 +250,8 @@ header nav .menu li a {
   max-width: 1024px;
   margin: 0 auto;
   display: none;
-  -webkit-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
   opacity: 0;
 }
 
@@ -303,6 +305,15 @@ header nav .menu li a {
 .procedimientos-content-container .container .col img {
   width: 90%;
   margin: 0 auto;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+}
+
+.procedimientos-content-container .container .col img.active {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .chapa-container {
@@ -520,10 +531,10 @@ header nav .menu li a {
   line-height: 1.2;
   color: white;
   text-indent: 30px;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   -webkit-overflow-y: auto;
   /* added css prefix for safari */
+  -webkit-overflow-scrolling: touch;
 }
 
 .testimonios-container .container .testimonios-slider .item .col .name {
@@ -542,8 +553,16 @@ header nav .menu li a {
 }
 
 .testimonios-container .container .testimonios-slider .owl-dots button span {
-  height: 3px;
+  height: 5px;
   width: 30px;
+  background: transparent;
+  border: 1px solid white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.testimonios-container .container .testimonios-slider .owl-dots button.active span, .testimonios-container .container .testimonios-slider .owl-dots button:hover span {
+  background: #fff;
 }
 
 .testimonios-container .container .testimonios-slider .owl-nav {
@@ -555,8 +574,26 @@ header nav .menu li a {
 .testimonios-container .container .testimonios-slider .owl-nav button {
   color: white;
   font-size: 50px;
-  height: 50px;
+  height: 70px;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid transparent;
+  padding: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.testimonios-container .container .testimonios-slider .owl-nav button:hover {
+  background: transparent;
+  border: 1px solid white;
 }
 
 .testimonios-container .container .testimonios-slider .owl-nav button.owl-prev {
@@ -626,6 +663,12 @@ header nav .menu li a {
   margin-top: 5px;
   padding: 0px 15px;
   font-size: 1.5rem;
+  outline: none;
+}
+
+.contact-container .container .form .col .form-input input:not([type="submit"]) {
+  -webkit-box-shadow: 0 0 0 4px #264f83;
+          box-shadow: 0 0 0 4px #264f83;
 }
 
 .contact-container .container .form .col .form-input input[type="submit"] {
@@ -655,4 +698,28 @@ header nav .menu li a {
 .contact-container .container .form .col .form-input-third .form-input {
   width: 30%;
 }
-/*# sourceMappingURL=index.css.map */
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
+  padding: 30px;
+}
