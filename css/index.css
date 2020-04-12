@@ -664,11 +664,16 @@ header nav .menu li a {
   padding: 0px 15px;
   font-size: 1.5rem;
   outline: none;
+  -webkit-transition: border 0.1s ease;
+  transition: border 0.1s ease;
 }
 
-.contact-container .container .form .col .form-input input:not([type="submit"]) {
-  -webkit-box-shadow: 0 0 0 4px #264f83;
-          box-shadow: 0 0 0 4px #264f83;
+.contact-container .container .form .col .form-input input.error {
+  border: 1px solid red;
+}
+
+.contact-container .container .form .col .form-input input.success {
+  border: 1px solid green;
 }
 
 .contact-container .container .form .col .form-input input[type="submit"] {
@@ -697,6 +702,22 @@ header nav .menu li a {
 
 .contact-container .container .form .col .form-input-third .form-input {
   width: 30%;
+}
+
+.contact-container .container .errors-cont {
+  display: none;
+  max-width: 800px;
+  margin: 0 auto;
+  color: red;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-container .container .success-cont {
+  color: green;
+  max-width: 800px;
+  margin: 0 auto;
+  display: none;
 }
 
 footer {

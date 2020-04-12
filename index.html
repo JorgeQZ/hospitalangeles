@@ -97,28 +97,28 @@
   <!-- Procedimiento opciones -->
   <div class="procedimientos-options-container">
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="200">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Bypass Gástrico
       </div>
     </div>
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="300">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Mini Bypass Gástrico
       </div>
     </div>
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="500">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Manga Gástrica
       </div>
     </div>
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="600">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Banda Gástrica <br />
@@ -126,7 +126,7 @@
       </div>
     </div>
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="700">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Revisión y Conversión <br />
@@ -134,7 +134,7 @@
       </div>
     </div>
     <!-- Item -->
-    <div class="item" data-aos="fade-up" data-aos-delay="800">
+    <div class="item">
       <div class="title">
         <small>Procedimientos</small>
         Otros
@@ -465,49 +465,55 @@
   <!-- Contacto -->
   <div class="contact-container">
     <div class="container">
-      <div class="title" data-aos="fade-right" data-aos-anchor-placement="center-top">
+      <div class="title">
         Contacto
       </div>
-      <div class="form" data-aos="fade-up" data-aos-anchor-placement="center-top">
+      <form class="form" id="contact-form" action="mail.php" method="POST">
         <div class="col">
           <div class="form-input">
-            <label for="">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" value="nombre">
           </div>
           <div class="form-input">
-            <label for="">Email</label>
-            <input type="email" name="correo" id="correo">
+            <label for="correo">Email</label>
+            <input type="email" name="correo" id="correo" value="test@test.com">
           </div>
           <div class="form-input">
-            <label for="">Teléfono</label>
-            <input type="tel" name="tel" id="tel">
+            <label for="teléfono">Teléfono</label>
+            <input type="tel" name="teléfono" id="teléfono" value="812380 3934">
           </div>
         </div>
         <div class="col">
           <div class="form-input-third">
             <div class="form-input">
-              <label for="">Edad</label>
-              <input type="text" name="edad" id="edad">
+              <label for="edad">Edad</label>
+              <input type="number" name="edad" id="edad" min="0" max="99" value="24">
             </div>
             <div class="form-input">
-              <label for="">Peso</label>
-              <input type="text" name="peso" id="peso">
+              <label for="peso">Peso <small>(Kg)</small></label>
+              <input type="number" name="peso" id="peso" min="30" max="300" value="90">
             </div>
             <div class="form-input">
-              <label for="">Estatura</label>
-              <input type="text" name="estatura" id="estatura">
+              <label for="estatura">Estatura <small>(Cm)</small></label>
+              <input type="number" name="estatura" id="estatura" min="50" max="220" value="174">
             </div>
           </div>
           <div class="form-input">
-            <label for="">Tratamiento de interés</label>
-            <input type="email" name="tratamiento" id="tratamiento">
+            <label for="tratamiento">Tratamiento de interés</label>
+            <input type="text" name="tratamiento" id="tratamiento" value="Tratamiento">
           </div>
           <div class="form-input">
             <br>
             <input type="submit" value="Enviar">
           </div>
+
         </div>
-      </div>
+      </form>
+
+      <br>
+      <div class="errors-cont" id="errors-display"></div>
+      <div class="success-cont" id="success-display"></div>
+
     </div>
   </div>
   <!-- Contacto -->

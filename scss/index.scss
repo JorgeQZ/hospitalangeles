@@ -467,9 +467,15 @@ a {
             padding: 0px 15px;
             font-size: 1.5rem;
             outline: none;
-
+            transition: border 0.1s ease;
+            &.error {
+              border: 1px solid red;
+            }
+            &.success {
+              border: 1px solid green;
+            }
             &:not([type="submit"]) {
-              box-shadow: 0 0 0 4px $main;
+              // box-shadow: 0 0 0 4px $main;
             }
             &[type="submit"] {
               margin-top: 6px;
@@ -493,6 +499,22 @@ a {
           }
         }
       }
+    }
+
+    .errors-cont {
+      display: none;
+      max-width: 800px;
+      margin: 0 auto;
+      color: red;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .success-cont {
+      color: green;
+      max-width: 800px;
+      margin: 0 auto;
+      display: none;
     }
   }
 }
