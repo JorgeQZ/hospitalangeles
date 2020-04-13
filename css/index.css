@@ -718,6 +718,7 @@ header nav .menu li a {
   max-width: 800px;
   margin: 0 auto;
   display: none;
+  text-align: center;
 }
 
 footer {

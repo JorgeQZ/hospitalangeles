@@ -31,26 +31,46 @@ $(document).ready(function () {
     }
 
     function SendMail(element) {
+        let values = $(element).serialize();
+        let type = $(element).attr("method");
+        let url = 'mail.php';
 
+        $.ajax({
+            type: type,
+            url: url,
+            data: values,
+            beforeSend: function () {
+                $('#success-display').fadeIn().html('Enviando');
+            },
+            complete: function (data) {
+                /*
+                * Se ejecuta al termino de la petición
+                * */
+
+                console.log(data, 'complete');
+
+            },
+            success: function (data) {
+                /*
+                * Se ejecuta cuando termina la petición y esta ha sido
+                * correcta
+                * */
+                console.log(data, 'success');
+                const inputs_success = $('#contact-form input');
+
+                inputs_success.each(function (index, element) {
+                    $(element).value = '';
+                });
+            },
+        });
 
     }
     $('#contact-form').bind("submit", function (e) {
-        // e.preventDefault();
+        e.preventDefault();
         if (CheckForm()) {
-            // SendMail($(this));
-            let values = $(this).serialize();
-            let type = $(this).attr("method");
-            let url = $(this).attr("action");
-            console.info(values, type, url);
-
-            // $.ajax({
-            //     type: type,
-            //     url: url,
-            //     data: values
-            // });
-
+            SendMail($(this));
         }
-        // return 0;
+        return 0;
     });
 
 
