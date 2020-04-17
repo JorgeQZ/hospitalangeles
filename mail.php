@@ -19,7 +19,7 @@ try {
     $mail->Host       = 'smtp.live.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'jorge_qzg@hotmail.com';                     // SMTP username
-    $mail->Password   = 'Spiderman09';                               // SMTP password
+    $mail->Password   = 'Spiderman78';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -634,11 +634,15 @@ try {
     ';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    // $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
 
-// $datos = $_POST;
-// echo json_encode($datos, JSON_FORCE_OBJECT);
+    $mail->send();
+    $data['type'] = 'success';
+    echo json_encode($data, JSON_FORCE_OBJECT);
+    exit;
+
+} catch (Exception $e) {
+    $data['type'] = 'error';
+    $data['details'] = 'Mailer Error: ' . $mail->ErrorInfo;
+    echo json_encode($data);
+    exit;
+}

@@ -95,6 +95,90 @@ header nav .menu li a {
   text-shadow: 2px 1px 0px #3c6998;
 }
 
+@-webkit-keyframes mail_sent {
+  0% {
+    display: block;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes mail_sent {
+  0% {
+    display: block;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes sending_mail {
+  0% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+  }
+  50% {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+  }
+}
+
+@keyframes sending_mail {
+  0% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+  }
+  50% {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+  }
+}
+
+@-webkit-keyframes success_mail {
+  0% {
+    opacity: 0;
+    top: 100%;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes success_mail {
+  0% {
+    opacity: 0;
+    top: 100%;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
 .hero-container {
   height: calc(100vh - 100px);
   background-color: #000;
@@ -319,6 +403,15 @@ header nav .menu li a {
 .chapa-container {
   background-color: #264f83;
   padding: 4rem 2rem;
+}
+
+.chapa-container .team-slider {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.chapa-container .team-slider .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,7 +420,7 @@ header nav .menu li a {
           justify-content: center;
 }
 
-.chapa-container .col {
+.chapa-container .team-slider .item .col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +433,7 @@ header nav .menu li a {
   max-width: 640px;
 }
 
-.chapa-container .col .image {
+.chapa-container .team-slider .item .col .image {
   background-color: #fff;
   width: 400px;
   height: 400px;
@@ -349,24 +442,24 @@ header nav .menu li a {
   margin: 0 auto;
 }
 
-.chapa-container .col .image img {
+.chapa-container .team-slider .item .col .image img {
   width: 100%;
   max-width: 400px;
 }
 
-.chapa-container .col .content {
+.chapa-container .team-slider .item .col .content {
   padding: 20px;
   padding-left: 60px;
 }
 
-.chapa-container .col .content .title {
+.chapa-container .team-slider .item .col .content .title {
   color: white;
   font-size: 2rem;
   position: relative;
   display: inline-block;
 }
 
-.chapa-container .col .content .title:before {
+.chapa-container .team-slider .item .col .content .title:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -375,11 +468,11 @@ header nav .menu li a {
   background-color: #8bb7db;
 }
 
-.chapa-container .col .content .title small {
+.chapa-container .team-slider .item .col .content .title small {
   font-size: 1rem;
 }
 
-.chapa-container .col .content .desc {
+.chapa-container .team-slider .item .col .content .desc {
   color: white;
   padding: 20px 0;
   margin-bottom: 20px;
@@ -387,7 +480,7 @@ header nav .menu li a {
   line-height: 1.6rem;
 }
 
-.chapa-container .col .content .button {
+.chapa-container .team-slider .item .col .content .button {
   color: #264f83;
   background-color: #fff;
   padding: 10px 15px;
@@ -400,9 +493,72 @@ header nav .menu li a {
   letter-spacing: 0.6px;
 }
 
-.chapa-container .col .content .button:hover {
+.chapa-container .team-slider .item .col .content .button:hover {
   color: white;
   background-color: #264f83;
+}
+
+.chapa-container .team-slider .owl-dots {
+  width: 100%;
+  position: absolute;
+  top: calc(100% + 20px);
+}
+
+.chapa-container .team-slider .owl-dots button span {
+  height: 5px;
+  width: 30px;
+  background: transparent;
+  border: 1px solid white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.chapa-container .team-slider .owl-dots button.active span, .chapa-container .team-slider .owl-dots button:hover span {
+  background: #fff;
+}
+
+.chapa-container .team-slider .owl-nav {
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 25px);
+}
+
+.chapa-container .team-slider .owl-nav button {
+  height: 70px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid transparent;
+  padding: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.chapa-container .team-slider .owl-nav button span {
+  color: white;
+  font-size: 50px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.chapa-container .team-slider .owl-nav button:hover {
+  background: transparent;
+  border: 1px solid white;
+}
+
+.chapa-container .team-slider .owl-nav button.owl-prev {
+  left: -50px;
+}
+
+.chapa-container .team-slider .owl-nav button.owl-next {
+  right: -50px;
 }
 
 .meet-the-team-container {
@@ -412,25 +568,33 @@ header nav .menu li a {
 .meet-the-team-container .container {
   max-width: 1024px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
+}
+
+.meet-the-team-container .container:first-child {
+  display: block;
+}
+
+.meet-the-team-container .container .item {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.meet-the-team-container .container .col:last-child {
+.meet-the-team-container .container .item .col:last-child {
   width: 45%;
   padding-left: 2rem;
 }
 
-.meet-the-team-container .container .col img {
+.meet-the-team-container .container .item .col img {
   width: 100%;
   margin: 0 auto;
 }
 
-.meet-the-team-container .container .col .title {
+.meet-the-team-container .container .item .col .title {
   padding-left: 10px;
   border-left: 4px solid #8bb7db;
   font-size: 2rem;
@@ -440,14 +604,14 @@ header nav .menu li a {
   font-weight: bold;
 }
 
-.meet-the-team-container .container .col .title small {
+.meet-the-team-container .container .item .col .title small {
   font-weight: normal;
   font-size: 1.25rem;
   display: block;
   color: black;
 }
 
-.meet-the-team-container .container .col .desc {
+.meet-the-team-container .container .item .col .desc {
   max-width: 400px;
   margin-left: 4px;
   padding-top: 50px;
@@ -455,11 +619,11 @@ header nav .menu li a {
   line-height: 1.2;
 }
 
-.meet-the-team-container .container .col .desc ul {
+.meet-the-team-container .container .item .col .desc ul {
   padding-left: 2rem;
 }
 
-.meet-the-team-container .container .col .desc ul li {
+.meet-the-team-container .container .item .col .desc ul li {
   margin-bottom: 10px;
 }
 
@@ -469,7 +633,7 @@ header nav .menu li a {
 }
 
 .testimonios-container .container {
-  width: 100%;
+  width: 90%;
   max-width: 1024px;
   margin: 0 auto;
 }
@@ -636,9 +800,12 @@ header nav .menu li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-container .container .form .col {
+  position: relative;
   width: 50%;
   padding: 20px;
 }
@@ -704,20 +871,138 @@ header nav .menu li a {
   width: 30%;
 }
 
+.contact-container .container .form .success-cont {
+  max-width: 800px;
+  margin: 0 auto;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  background-color: #fff;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  opacity: 0;
+  -webkit-transition: top 0.2s ease, opacity 0.3s linear;
+  transition: top 0.2s ease, opacity 0.3s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 22px;
+  color: #264f83;
+  border: 1px solid #264f83;
+  border-radius: 8px;
+}
+
+.contact-container .container .form .success-cont #success_mail_icon {
+  display: none;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-animation-name: mail_sent;
+          animation-name: mail_sent;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.contact-container .container .form .success-cont #error_mail_icon {
+  display: none;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-animation-name: mail_sent;
+          animation-name: mail_sent;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.contact-container .container .form .success-cont #sending_mail {
+  -webkit-animation-name: sending_mail;
+          animation-name: sending_mail;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.contact-container .container .form .success-cont.active {
+  -webkit-animation-name: success_mail;
+          animation-name: success_mail;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.contact-container .container .form .success-cont .entendido {
+  display: none;
+  background-color: #264f83;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid #264f83;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-container .container .form .success-cont .intentar {
+  display: none;
+  background-color: #9a1115;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid #9a1115;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-container .container .form .success-cont.error {
+  color: #9a1115;
+  border-color: #9a1115;
+}
+
 .contact-container .container .errors-cont {
   display: none;
   max-width: 800px;
   margin: 0 auto;
   color: red;
   padding: 20px;
-  text-align: center;
-}
-
-.contact-container .container .success-cont {
-  color: green;
-  max-width: 800px;
-  margin: 0 auto;
-  display: none;
   text-align: center;
 }
 
