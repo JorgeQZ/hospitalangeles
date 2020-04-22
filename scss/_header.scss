@@ -1,36 +1,150 @@
-header {
-  background-color: $main;
-  padding: 0.99rem 1.3rem;
-  // max-height: 100px;
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    .brand-logo {
-      width: 150px;
-      img {
+//Comentario sabroson
+@keyframes menu_li {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 989px) {
+  header {
+    background-color: $main;
+    padding: 0.99rem 1.3rem;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    height: 70px;
+    nav {
+      background-color: $main;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .brand-logo {
+        width: 80px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .menu-button {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        span {
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          margin: 3px 0;
+          transform-origin: center;
+          transition: transform 0.2s linear;
+        }
+
+        &.active {
+          span {
+            &:first-child {
+              transform: rotate(45deg) translate(3px, 3px);
+            }
+            &:last-child {
+              transform: rotate(-45deg) translate(3px, -3px);
+            }
+          }
+        }
+      }
+      .menu {
+        margin: 0;
+        padding: 20px;
+        padding-top: 30px;
+        position: absolute;
+        top: 99%;
+        left: -100%;
         width: 100%;
+        background-color: $main;
+        box-sizing: border-box;
+        height: 100vh;
+        transition: left 0.2s ease;
+        &.active {
+          left: 0;
+          li {
+            animation-name: menu_li;
+            animation-timing-function: ease-in;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            @for $i from 1 to 10 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.3}s;
+              }
+            }
+          }
+        }
+        li {
+          list-style: none;
+          padding: 15px 20px;
+          font-size: 1.5rem;
+          cursor: pointer;
+          opacity: 0;
+          transform: translateX(-15px);
+          border-bottom: 1px solid rgba(white, 0.2);
+          perspective-origin: center;
+          perspective: 300px;
+          &:last-child {
+            border: none;
+          }
+          a {
+            padding-top: 10px;
+            color: #fff;
+            text-shadow: 2px 1px 0px #3c6998;
+          }
+        }
       }
     }
-    .menu {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      margin: 0;
-      li {
-        list-style: none;
-        padding: 5px 10px;
-        border-right: 1px solid #3d6999;
-        font-size: 1rem;
-        cursor: pointer;
+  }
+}
 
-        &:last-child {
-          border: none;
+@media screen and (min-width: 990px) {
+  header {
+    background-color: $main;
+    padding: 0.99rem 1.3rem;
+    // max-height: 100px;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .brand-logo {
+        width: 150px;
+        img {
+          width: 100%;
         }
-        a {
-          padding-top: 10px;
-          color: #fff;
-          text-shadow: 2px 1px 0px #3c6998;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0;
+        li {
+          list-style: none;
+          padding: 5px 10px;
+          border-right: 1px solid #3d6999;
+          font-size: 1rem;
+          cursor: pointer;
+
+          &:last-child {
+            border: none;
+          }
+          a {
+            padding-top: 10px;
+            color: #fff;
+            text-shadow: 2px 1px 0px #3c6998;
+          }
         }
       }
     }

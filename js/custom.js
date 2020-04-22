@@ -1,5 +1,27 @@
 $(document).ready(function () {
 
+    //Menu button : Mobile
+    $('.menu-button').click(function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.menu').removeClass('active');
+        } else {
+            $(this).addClass('active');
+            $('.menu').addClass('active');
+        }
+    });
+
+    $('.menu li').click(function (e) {
+
+        $('.menu-button').removeClass('active');
+        $('.menu').removeClass('active');
+
+
+    });
+
+
+
     // Tab buttons
     $('.tab-button').click(function (e) {
         e.preventDefault();
@@ -11,7 +33,7 @@ $(document).ready(function () {
     // Sliders
     $('.testimonios-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 0,
         nav: true,
         dots: true,
         items: 1
@@ -19,11 +41,13 @@ $(document).ready(function () {
 
     $('.team-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 0,
         nav: true,
         dots: true,
         items: 1
     })
+
+
     // Form submit
     function CheckForm() {
         let errors = 0;
