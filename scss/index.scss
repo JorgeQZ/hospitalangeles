@@ -715,6 +715,7 @@ a {
 @media screen and (min-width: 990px) {
   .hero-container {
     height: calc(100vh - 100px);
+    max-height: 800px;
     background-color: #000;
     background-size: cover;
     background-position: center;

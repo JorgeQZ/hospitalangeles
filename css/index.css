@@ -259,6 +259,7 @@ a {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    height: 102px;
   }
   header nav .brand-logo {
     width: 150px;
@@ -302,7 +303,7 @@ a {
     left: 0;
     z-index: 1000;
     padding: 0;
-    padding-top: 16px;
+    padding-top: 0px;
     margin: 0;
     width: 100%;
     border: unset;
@@ -327,7 +328,23 @@ a {
     text-shadow: none;
   }
   header nav .menu li.has-submenu:hover ul.submenu {
+    padding-top: 15px;
     max-height: 1000px;
+  }
+  header nav.scrolled {
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+    background-color: #264f83;
+  }
+  header nav.scrolled .brand-logo {
+    width: 80px;
   }
 }
 
@@ -1116,6 +1133,7 @@ a {
 @media screen and (min-width: 990px) {
   .hero-container {
     height: calc(100vh - 100px);
+    max-height: 800px;
     background-color: #000;
     background-size: cover;
     background-position: center;
