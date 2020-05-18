@@ -1,0 +1,185 @@
+<h3>General information</h3>
+
+<label><strong>Date</strong>
+[date* date id:careers-date min:today max:today]
+</label>
+
+<p><strong>Position Desired</strong>
+ [select* position "Front of the house" "Back of the house"]
+
+ [group front-selected clear_on_hide]
+   [checkbox* front-position "Food server" "Bartender" "Server assistant" "Cashier" "Host/Hostess"]
+ [/group]
+
+ [group back-selected clear_on_hide]
+   [checkbox* back-position "Cook" "Dishwasher"]
+ [/group]
+</p>
+
+<p><strong>How did you hear about us?</strong>
+ [checkbox* how-they-hear "Internet posting" "Social media (restaurants)" "Post in restaurant" "Employee referral"]
+  [group employee-selected]
+   Employee referral (Specify):
+   [textarea specify-referral]
+ [/group]
+</p>
+
+<label><strong>Type of work desired</strong>
+[radio type-work default:1 "Full time" "Part time"]
+</label>
+
+<!-- ================================== PERSONAL INFORMATION ================================== -->
+<br>
+<h3>Personal Information</h3>
+
+<strong>Name</strong>
+<label>[text* first placeholder "First"] [text* last placeholder "Last"]</label>
+
+<strong>Address</strong>
+
+<label>[text* street placeholder "Street address"] [text* city placeholder "City"] </label>
+
+<label>[text* state placeholder "State/Province"] [text* zip placeholder "ZIP/Postal code"]</label>
+
+<label><strong>Phone</strong>
+[tel* phone]
+</label>
+
+<label><strong>Cell phone</strong>
+[tel cell]
+</label>
+
+<label><strong>Email</strong>
+[email* email]
+</label>
+
+<label><strong>Are you 18 years of age or older?</strong>
+[radio age default:1 "Yes" "No"]
+</label>
+
+<label><strong>Are you willing to get a Pre-Employment Drug Test?</strong>
+[radio pre-drug default:1 "Yes" "No"]
+</label>
+
+<label><strong>Do you have a driver’s license?</strong>
+[radio driver-license default:1 "Yes" "No"]
+</label>
+
+<label><strong>Are you legally eligible for employment in the USA?</strong>
+[radio eligible default:1 "Yes" "No"]
+</label>
+
+<strong>Indicate your preferred work days</strong>
+[checkbox* work-day "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"]
+
+
+<label><strong>Have you ever worked for any of NORSAN’s locations before?</strong>
+[radio worked-before default:2 "Yes" "No"]
+</label>
+
+[group worked-selected clear_on_hide]
+Please give date and location
+[text* worked-location]
+[/group]
+
+<label><strong>Have you been convicted of a felony or any moving violations in the last ten (10) years?</strong>
+[radio convicted default:2 "Yes" "No"]</label>
+[group convicted-selected]
+Please explain
+[text convicted-explain]
+[/group]
+<small>(A conviction will not necessarily disqualify you)</small>
+
+<label><strong>Is anyone related to you employed by NORSAN?</strong>
+[radio related default:2 "Yes" "No"]
+</label>
+[group related-selected]Please indicate
+<label>[text related-name placeholder "Name"] [text relationship placeholder "Relationship"]</label>
+[/group]
+
+<!-- ================================== Education ================================== -->
+<br>
+<h3>Level of Education / Training</h3>
+[radio level-education default:1 "Elementary" "High school" "Associate's Degree" "Bachelor’s Degree"]
+
+<label>Describe any professional certificates, specialized training, apprenticeships and / or licenses
+[textarea desc-professional]
+</label>
+
+<!-- ================================== PERSONAL INFORMATION ================================== -->
+<br>
+<h3>Employment History</h3>
+<p>List the names of all your employers in the last 5 years, beginning with the most recent. Please describe any gaps in employment (exclude medical related) between companies.</p>
+
+<h4>1.- Company</h4>
+<label><strong>Company</strong>
+[text* company-1]</label>
+
+<label><strong>Position/Title</strong>
+[text* position-1]</label>
+
+<label><strong>Length of service</strong>
+<p>[text* from-1 placeholder "From:"] [text* to-1 placeholder "To:"]</p></label>
+
+<label><strong>Wages upon leaving</strong>
+[text* wages-1]</label>
+
+<label><strong>Per</strong>
+[radio per-1 default:1  "Hour" "Week" "Month" "Year"]</label>
+
+<label><strong>Name and Title of supervisor</strong>
+[text surpervisor-1]</label>
+
+<label><strong>Main company phone number</strong>
+[tel comp-phone-1]</label>
+
+<label><strong>Reason for leaving and explanation</strong>
+[textarea reason-1]</label>
+
+<label><strong>Are you eligible to be rehired?</strong>
+[radio rehired-1 default:1 "Yes" "No"]
+</label>
+
+<label><strong>May we call your employer for a reference?</strong>
+[radio call-reference default:1 "Yes" "No"]
+[group not-call-reference-1 clear_on_hide]
+Please explain [text call-explain-1]
+[/group]
+</label>
+
+<br>
+<h5>CERTIFICATION & ACKNOWLEDGMENT</h5>
+<p style="font-size: 14px; line-height: 16px;">PLEASE READ CAREFULLY BEFORE SIGNING I hereby certify that all of the information provided by me in this application (or any other accompanying or required documents) is correct, accurate and complete to the best of my knowledge. I understand that the falsification, misrepresentation or omission of any facts in said documents will be cause for denial of employment or immediate termination of employment regardless of the timing or circumstances of discovery. I understand that submission of an application does not guarantee employment. I further understand that, should an offer of employment be extended by Norsan Group that such employment with Norsan Group is at will, for no specified duration and may be terminated by either Norsan Group or me at any time, with or without cause or notice. I understand that none of the documents, policies, procedures, actions, statements of Norsan Group or its representatives used during the employment process is deemed a contract of employment real or implied. I understand that no representative of Norsan Group except the President has the authority to enter into any agreement guaranteeing any conditions of employment or any agreement contrary to the foregoing statements and that any such agreements must be made in writing and signed by the CEO & Chairman of Norsan Group. In consideration for employment with Norsan Group, if employed, I agree to conform to the rules, regulations, policies and procedures of Norsan Group at all times and understand that such obedience is a condition of employment. I understand that due to the nature of Norsan Group business, attendance, and punctuality are considered essential requirements of every job at Norsan Group and that poor attendance or tardiness will result in disciplinary action. I understand that if offered a position with Norsan Group, I may be required to submit to a pre-employment medical examination, drug screening and background check as a condition of employment. I understand that unsatisfactory result from, refusal to cooperate with, or any attempt to affect the results of these pre-employments tests and checks will result in withdrawal of any employment offer or termination of employment if already employed. I herby authorize any and all schools, former employers, references, courts and any others who have information about me to provide such information to Norsan Group and/or any of its representatives, agents or vendors and I release all parties involved from any and all liability for any and all damage that may result from providing such information. I understand that I wonâ€™t be considered an applicant unless the company has contacted me for a specific opening. As an applicant, I am aware that my application will only be valid during the period that the specific opening is available. Due to the large volume of interest we receive, we are unable to respond to phone inquiries. Norsan Group would like to thank you for your interest in joining our organization. We will contact you if we believe there is a match between your qualifications and the position for which you are applying. We are an EOE.	We are a Drug-free Workplace. Drug screening and back ground checks conducted on all new hires. BY SIGNING BELOW I ACKNOWLEDGE THAT I HAVE READ, UNDERSTOOD AND AGREE TO THE ABOVE STATEMENTS</p>
+
+
+<label>BY SIGNING BELOW I ACKNOWLEDGE THAT I HAVE READ, UNDERSTOOD AND AGREE TO THE ABOVE STATEMENTS*
+[checkbox* understood use_label_element exclusive ""]
+</label>
+
+<h5>AFFIRMATIVE ACTION INFORMATION</h5>
+<p style="font-size: 14px; line-height: 16px;">Norsan Group complies with all applicable laws, regulations and responsibilities relative to Affirmative Action. All candidates for open positions, in addition to employees in current positions, are considered without regard to race, color, national origin, sex, age, religion, veteran status, disability or any other characteristic protected by law. To help us comply with government reporting requirements, we ask that you please supply the information requested on this page on a voluntary basis. This information is for statistical purposes only and will not be kept with your application or used in connection with any employment decision. There will be no negative consequence to you if you choose not to provide the information requested on this page. This form will be detached from the application immediately and placed in a separate, confidential file for use in completing periodic government reports. Your voluntary cooperation is appreciated.
+</p>
+
+<label>Name:
+[text* afirmative-first placeholder "First"] [text* afirmative-last placeholder "Last"] </label>
+
+<label>Position applied for:
+[text* position-applied-for]</label>
+
+<label>Location:
+[text* location]</label>
+
+<label>Date:
+[date* affirmative-date]</label>
+
+<label>Gender:
+[radio gender default:1 "Male" "Female"]</label>
+
+<label>Please select the item that best describe you:
+[select* describe-you "Caucasian (white)" "Black of African American" "Hispanic or Latin" "Asian" "American Indian or Alaska Native" "Native Hawaiian or Other Pacific Islander" "Two or more races, not Hispanic or Latino"]
+</label>
+
+<h5>FOR THE PURPOSE OF AFFIRMATIVE ACTION PROGRAMS, THE FOLLOWING DEFINITIONS APPLY:</h5>
+<p style="font-size: 14px; line-height: 16px;">Caucasian, not of Hispanic Origin A person having origins in any of the original peoples of Europe, North America or the Middle East. Black or African American, not of Hispanic Origin - A person having origins in any of the Black racial groups of Africa. Hispanic or Latino- A person of Mexican, Puerto Rican, Cuban Central or South America or other Spanish Culture or origin, regardless of race. Asian, not of Hispanic Origin- a person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand and Vietnam. American Indian or Alaska Native, not of Hispanic Origin - A person having origins in any of the original peoples of North America, and who maintains cultural identification through tribal affiliation or community recognition. Native Hawaiian or Other Pacific Islander, not of Hispanic Origin: a person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. Two or More Races, not Hispanic or Latino - All persons who identify with more than one of the above five races.</p>
+
+[submit "Submit"]
