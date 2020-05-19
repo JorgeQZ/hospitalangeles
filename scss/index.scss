@@ -114,7 +114,7 @@ a {
     flex-direction: row;
     .item {
       flex: 1 0 50%;
-      max-width: 50%;
+      max-width: 100%;
       min-height: 180px;
       height: 20vh;
       display: flex;
@@ -1255,11 +1255,15 @@ a {
         margin: 0 auto;
         margin-top: 40px;
         display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
         position: relative;
         overflow: hidden;
         .col {
           position: relative;
-          width: 50%;
+          flex: 1 0 50%;
           padding: 20px;
           .form-input {
             margin-bottom: 20px;

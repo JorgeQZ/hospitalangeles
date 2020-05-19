@@ -1,4 +1,24 @@
 $(document).ready(function () {
+    //IMC
+
+    $('#estatura').on('change', function (e) {
+        setIMC();
+    });
+
+
+    $('#peso').on('change', function (e) {
+        setIMC();
+    });
+
+    function setIMC() {
+        let estatura = parseFloat($('#estatura').val()) / 100;
+        let peso = parseFloat($('#peso').val());
+        let imc;
+        if (!isNaN(peso) && !isNaN(estatura)) {
+            imc = peso / (Math.pow(estatura, 2));
+            $('#imc').val(parseFloat(imc).toFixed(2));
+        }
+    }
 
     //Menu button : Mobile
     $('.menu-button').click(function (e) {
@@ -87,7 +107,7 @@ $(document).ready(function () {
 
         $.ajax({
             dataType: 'json',
-            type: type,
+            type: 'POST',
             async: true,
             url: url,
             data: values,
@@ -110,7 +130,7 @@ $(document).ready(function () {
                 if (result['type'] === 'success') {
 
                     let inputs_success = $('#contact-form input');
-                    // console.table(inputs_success);
+                    console.table(inputs_success);
                     inputs_success.each(function (index, element) {
 
                         if (element.type != 'submit') {
@@ -188,7 +208,7 @@ $(document).ready(function () {
 
         var item_option = $('.procedimientos-options-container .item').index(this);
         $('.procedimientos-content-container .container').removeClass('active');
-        console.log(item_option);
+        // console.log(item_option);
         $('#option-' + item_option).addClass('active')
             .css({ opacity: '0' }).animate({
                 opacity: '1'
@@ -235,7 +255,7 @@ $(document).ready(function () {
     if ($(window).width() >= 990) {
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
-            console.log(scroll);
+            // console.log(scroll);
 
             if (scroll >= 150) {
                 $('nav').addClass('scrolled');
