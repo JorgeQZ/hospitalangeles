@@ -1473,10 +1473,14 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .procedimientos-content-container .container {
     max-width: 1024px;
     margin: 0 auto;
+    width: 100%;
     display: none;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
@@ -1508,20 +1512,24 @@ a {
     margin: 0;
     color: #264f83;
     font-weight: bold;
+    max-width: 600px;
+    text-align: left;
   }
   .procedimientos-content-container .container .col .title small {
     font-weight: normal;
     font-size: 1.25rem;
     display: block;
     color: black;
+    text-align: left;
   }
   .procedimientos-content-container .container .col .desc {
-    max-width: 400px;
+    max-width: 600px;
     margin-left: 4px;
     padding-top: 50px;
     padding-left: 10px;
     padding-right: 20px;
     line-height: 1.2;
+    text-align: left;
   }
   .procedimientos-content-container .container .col .desc a {
     color: #264f83;
