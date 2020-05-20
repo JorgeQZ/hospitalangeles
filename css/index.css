@@ -354,14 +354,23 @@ a {
     font-size: 1rem;
     cursor: pointer;
     position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   header nav .menu li:last-child {
     border: none;
   }
-  header nav .menu li a {
+  header nav .menu li > a {
     padding-top: 10px;
     color: #fff;
     text-shadow: 2px 1px 0px #3c6998;
+  }
+  header nav .menu li:hover {
+    background-color: #fff;
+  }
+  header nav .menu li:hover > a {
+    color: #3d6999;
+    text-shadow: 2px 1px 0px transparent;
   }
   header nav .menu li ul.submenu {
     overflow: hidden;
@@ -1268,12 +1277,20 @@ a {
 
 @media screen and (min-width: 990px) {
   .hero-container {
-    height: calc(100vh - 100px);
-    max-height: 800px;
+    height: auto;
     background-color: #000;
     background-size: cover;
     background-position: center;
     position: relative;
+  }
+  .hero-container .hero-slider {
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-container .hero-slider .item {
+    height: 100%;
+    background-size: cover;
+    width: 100%;
   }
   .hero-container .square {
     position: absolute;

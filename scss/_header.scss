@@ -216,15 +216,23 @@
           font-size: 1rem;
           cursor: pointer;
           position: relative;
+          transition: all 0.3s;
           &:last-child {
             border: none;
           }
-          a {
+          > a {
             padding-top: 10px;
             color: #fff;
             text-shadow: 2px 1px 0px #3c6998;
           }
 
+          &:hover {
+            background-color: #fff;
+            > a {
+              color: #3d6999;
+              text-shadow: 2px 1px 0px transparent;
+            }
+          }
           ul.submenu {
             overflow: hidden;
             max-height: 0;

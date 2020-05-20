@@ -714,12 +714,20 @@ a {
 
 @media screen and (min-width: 990px) {
   .hero-container {
-    height: calc(100vh - 100px);
-    max-height: 800px;
+    height: auto;
     background-color: #000;
     background-size: cover;
     background-position: center;
     position: relative;
+    .hero-slider {
+      background-size: cover;
+      background-position: center;
+      .item {
+        height: 100%;
+        background-size: cover;
+        width: 100%;
+      }
+    }
     .square {
       position: absolute;
       left: 0;

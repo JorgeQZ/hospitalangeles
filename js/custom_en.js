@@ -51,15 +51,6 @@ $(document).ready(function () {
     });
 
     // Sliders
-
-    $('.hero-slider').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        dots: true,
-        items: 1
-    });
-
     $('.testimonios-slider').owlCarousel({
         loop: true,
         margin: 10,
@@ -97,10 +88,10 @@ $(document).ready(function () {
         });
 
         if (errors == 1) {
-            $('#errors-display').fadeIn().html('Un campo está vacío.');
+            $('#errors-display').fadeIn().html('A field is empty.');
             return false;
         } else if (errors > 1) {
-            $('#errors-display').fadeIn().html('Algunos campos están vacíos.');
+            $('#errors-display').fadeIn().html('ASome fields are empty.');
             return false;
 
         } else {
@@ -122,7 +113,7 @@ $(document).ready(function () {
             data: values,
             beforeSend: function () {
                 $('.success-cont').addClass('active');
-                $('.success-cont .text').html('Enviando').delay(3000);
+                $('.success-cont .text').html('Sending').delay(3000);
                 $('#sending_mail').show();
 
             },
@@ -152,7 +143,7 @@ $(document).ready(function () {
 
 
                     setTimeout(function () {
-                        $('.success-cont .text').html('Gracias por tu mensaje. <br> En breve nos pondremos en contacto contigo.');
+                        $('.success-cont .text').html('Thank you for your meassage. <br> We´ll contact you soon.');
                         $('#sending_mail').hide();
 
                         $('#success_mail_icon').show();
@@ -165,7 +156,7 @@ $(document).ready(function () {
 
                     setTimeout(function () {
                         $('.success-cont').addClass('error');
-                        $('.success-cont .text').html('Ha ocurrido un error');
+                        $('.success-cont .text').html('Oops, occurs and error');
                         $('#sending_mail').hide();
                         $('#error_mail_icon').show();
                         $('#intentar').delay(1000).fadeIn();

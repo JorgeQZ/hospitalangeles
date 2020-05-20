@@ -782,10 +782,14 @@
           </div>
           <div class="form-input">
             <label for="teléfono">Phone</label>
-            <input type="tel" name="teléfono" id="teléfono">
+            <input type="tel" name="telefono" id="telefono">
           </div>
         </div>
         <div class="col">
+          <div class="form-input">
+            <label for="tratamiento">Treatment of interest</label>
+            <input type="text" name="tratamiento" id="tratamiento">
+          </div>
           <div class="form-input-third">
             <div class="form-input">
               <label for="edad">Age</label>
@@ -800,15 +804,17 @@
               <input type="number" name="estatura" id="estatura" min="50" max="220">
             </div>
           </div>
+
           <div class="form-input">
-            <label for="tratamiento">Treatment of interest</label>
-            <input type="text" name="tratamiento" id="tratamiento">
-          </div>
-          <div class="form-input">
-            <br>
-            <input type="submit" value="Send">
+            <label for="tratamiento">IMC</label>
+            <input type="text" name="imc" id="imc" readonly>
           </div>
 
+        </div>
+        <div class="col">
+          <div class="form-input">
+            <input type="submit" value="Send">
+          </div>
         </div>
         <div class="success-cont" id="success-display">
           <div>
@@ -899,7 +905,7 @@
   <!-- Footer -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="../js/custom.js"></script>
+  <script src="../js/custom_en.js"></script>
   <script src="../js/owl.carousel.min.js"></script>
   <script src="https://kit.fontawesome.com/8d4904fd71.js" crossorigin="anonymous"></script>
 </body>
