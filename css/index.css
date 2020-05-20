@@ -580,23 +580,51 @@ a {
 @media screen and (min-width: 320px) and (max-width: 989px) {
   .hero-container {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     background-color: #000;
     background-size: cover;
     background-position: center;
     position: relative;
   }
+  .hero-container .hero-slider {
+    padding-top: 70px;
+    height: 70vh;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .hero-container .hero-slider .owl-stage-outer .item {
+    height: 61vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-container .hero-slider .owl-stage-outer .item img {
+    display: none;
+  }
+  .hero-container .hero-slider .owl-dots,
+  .hero-container .hero-slider .owl-nav {
+    position: absolute;
+  }
+  .hero-container .hero-slider .owl-dots {
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .hero-container .hero-slider .owl-dots button span {
+    background-color: white;
+  }
   .hero-container .square {
     position: absolute;
     left: 0;
-    bottom: 50px;
+    bottom: 30px;
     background-color: #8bb7db;
     color: white;
     font-size: 24px;
     font-style: italic;
     line-height: 1;
     letter-spacing: 1px;
-    max-width: 670px;
+    max-width: 640px;
+    z-index: 1;
     padding: 1rem 2rem;
   }
   .who-container {
@@ -1287,22 +1315,49 @@ a {
     background-size: cover;
     background-position: center;
   }
-  .hero-container .hero-slider .item {
-    height: 100%;
-    background-size: cover;
+  .hero-container .hero-slider .item img {
     width: 100%;
+    margin: 0;
+  }
+  .hero-container .hero-slider .owl-dots {
+    position: absolute;
+  }
+  .hero-container .hero-slider .owl-dots {
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .hero-container .hero-slider .owl-dots button span {
+    background-color: white;
+  }
+  .hero-container .hero-slider .owl-nav button {
+    position: absolute;
+    top: 50%;
+  }
+  .hero-container .hero-slider .owl-nav button span {
+    background-color: #8bb7db;
+    padding: 1px;
+    color: white;
+    font-size: 20px;
+  }
+  .hero-container .hero-slider .owl-nav .owl-prev {
+    left: 10px;
+  }
+  .hero-container .hero-slider .owl-nav .owl-next {
+    right: 10px;
   }
   .hero-container .square {
     position: absolute;
     left: 0;
-    bottom: 50px;
+    bottom: 30px;
     background-color: #8bb7db;
     color: white;
-    font-size: 28px;
+    font-size: 18px;
     font-style: italic;
     line-height: 1;
     letter-spacing: 1px;
-    max-width: 670px;
+    max-width: 540px;
+    z-index: 100;
     padding: 1.5rem 2.5rem;
   }
   .who-container {

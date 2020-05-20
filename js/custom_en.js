@@ -51,6 +51,24 @@ $(document).ready(function () {
     });
 
     // Sliders
+    $('.hero-slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        dots: true,
+        items: 1,
+
+        responsive: {
+            0: {
+                nav: false
+            },
+            990: {
+                nav: true,
+
+            }
+        }
+    });
+
+
     $('.testimonios-slider').owlCarousel({
         loop: true,
         margin: 10,

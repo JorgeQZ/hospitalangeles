@@ -55,9 +55,18 @@ $(document).ready(function () {
     $('.hero-slider').owlCarousel({
         loop: true,
         margin: 0,
-        nav: true,
         dots: true,
-        items: 1
+        items: 1,
+
+        responsive: {
+            0: {
+                nav: false
+            },
+            990: {
+                nav: true,
+
+            }
+        }
     });
 
     $('.testimonios-slider').owlCarousel({
