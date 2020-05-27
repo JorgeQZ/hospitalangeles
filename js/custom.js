@@ -31,23 +31,27 @@ $(document).ready(function () {
             imc_imc = peso_imc / (Math.pow(estatura_imc, 2));
             $('#imc_imc').val(parseFloat(imc_imc).toFixed(2));
             $('#imc').val(parseFloat(imc_imc).toFixed(2));
+
+            if (!isNaN(imc_imc)) {
+
+                if (imc_imc < 18.5) {
+                    response = "Bajo de peso";
+                } else if (imc_imc >= 18.5 && imc_imc <= 24.9) {
+                    response = "Normal";
+
+                } else if (imc_imc >= 25 && imc_imc <= 29.9) {
+                    response = "Sobrepeso";
+
+                } else {
+                    response = "Obesidad";
+                }
+
+                $('#response_id').html(response);
+                $('#estatura').val($('#estatura_imc').val());
+                $('#peso').val($('#peso_imc').val());
+            }
         }
 
-        if (imc_imc < 18.5) {
-            response = "Bajo de peso";
-        } else if (imc_imc >= 18.5 && imc_imc <= 24.9) {
-            response = "Normal";
-
-        } else if (imc_imc >= 25 && imc_imc <= 29.9) {
-            response = "Sobrepeso";
-
-        } else {
-            response = "Obesidad";
-        }
-
-        $('#response_id').html(response);
-        $('#estatura').val($('#estatura_imc').val());
-        $('#peso').val($('#peso_imc').val());
 
     }
 

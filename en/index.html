@@ -135,6 +135,48 @@
   </div>
   <!-- Quienes somos -->
 
+  <!-- IMC -->
+  <div class="imc-container" id="imc-container">
+    <div class="container">
+      <div class="title">
+        Calculate your BMI
+      </div>
+      <div class="imc-form">
+        <div class="col">
+          <div class="form-input">
+            <label for="peso">Weight <small>(lb)</small></label>
+            <input type="number" name="peso_lb" id="peso_lb" min="30" max="300">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-input half">
+            <div class="form-control">
+              <label for="estatura">Height <small>(ft)</small></label>
+              <input type="number" name="estatura_ft" id="estatura_ft" min="1" max="220">
+            </div>
+            <div class="form-control">
+              <label for="estatura"><small>(inch)</small></label>
+              <input type="number" name="estatura_inch" id="estatura_inch" min="0" max="220">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-input">
+            <label for="tratamiento">BMI</label>
+            <div class="imc-response">
+              <input type="text" name="bmi_c" id="bmi_c" readonly>
+              <div class="response" id="response_id"></div>
+            </div>
+          </div>
+          <div class="form-input">
+            <br>
+            <input type="submit" id="calcular_IMC" value="Calculate BMI">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- IMC -->
   <!-- Procedimiento opciones -->
   <div class="procedimientos-options-container" id="procedures">
     <!-- Item -->
@@ -175,6 +217,15 @@
       </div>
     </div>
 
+    <!-- Item -->
+    <div class="item">
+      <div class="title">
+        <small>Procedures</small>
+        Others
+
+      </div>
+    </div>
+
   </div>
   <!-- Procedimiento opciones -->
 
@@ -198,7 +249,7 @@
             In this way, the calorie intake decreases and weight is gradually reduced, thus improving comorbidities (diabetes and hypertension, among others).
           </p>
           <p>
-            Request your free weight loss consultation in Visión Bariátrica at <a href="tel:+52 1 81 8368 7892" target="_top">+52 1 81 8368 7892</a>, or through WhatsApp <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_top">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_top">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
           </p>
         </div>
       </div>
@@ -229,7 +280,7 @@
             <li>By bypassing the small intestine, calories and nutrients are absorbed in the second half of the small intestine, thus reducing absorption and gradually losing weight (absorptive mechanism).</li>
           </ul>
           <p>
-            Request your free weight loss consultation in Visión Bariátrica at <a href="tel:+52 1 81 8368 7892" target="_top">+52 1 81 8368 7892</a>, or through WhatsApp <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_top">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_top">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
           </p>
         </div>
       </div>
@@ -253,7 +304,7 @@
           </p>
 
           <p>
-            Request your free weight loss consultation in Visión Bariátrica at <a href="tel:+52 1 81 8368 7892" target="_top">+52 1 81 8368 7892</a>, or through WhatsApp <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_blank">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_blank">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
           </p>
         </div>
       </div>
@@ -279,7 +330,7 @@
             The procedure can be reversed. No irreversible anatomical changes are made. (This is perhaps the most significant differentiating factor between Adjustable Gastric Banding and other Bariatric Surgeries.)
           </p>
           <p>
-            Request your free weight loss consultation in Visión Bariátrica at <a href="tel:+52 1 81 8368 7892" target="_top">+52 1 81 8368 7892</a>, or through WhatsApp <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_top">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_top">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
           </p>
         </div>
       </div>
@@ -289,56 +340,54 @@
     </div>
     <div id="option-4" class="container">
       <div class="col">
-        <div class="title">
-          <small>Procedures</small>
-          Bariatric Surgery Review and Conversion
-        </div>
+        <div>
+          <div class="title">
+            <small>Procedures</small>
+            Bariatric Surgery Review and Conversion
+          </div>
 
-        <div class="desc">
-          <p>
-            While most patients are successful after their first Bariatric Surgery, some may experience medical complications, or fail to achieve the estimated weight loss results, or have re-gain weight, so you and your doctor may consider what to do. called "revision surgery in complications or conversion in case of weight loss.
-            <br><br>
-            The surgeon will perform a new type of weight loss procedure that would potentially lead to better results over time.
-          </p>
-          <p>
-            Request your free weight loss consultation in Visión Bariátrica at <a href="tel:+52 1 81 8368 7892" target="_top">+52 1 81 8368 7892</a>, or through WhatsApp <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
-          </p>
+          <div class="desc">
+            <p>
+              While most patients are successful after their first Bariatric Surgery, some may experience medical complications, or fail to achieve the estimated weight loss results, or have re-gain weight, so you and your doctor may consider what to do. called "revision surgery in complications or conversion in case of weight loss.
+              <br><br>
+              The surgeon will perform a new type of weight loss procedure that would potentially lead to better results over time.
+            </p>
+            <p>
+              Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_top">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_top">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <!-- <img src="../img/tomy.jpg" alt="" /> -->
-      </div>
+
     </div>
-    <!-- <div id="option-5" class="container">
+    <div id="option-5" class="container">
       <div class="col">
-        <div class="title">
-          <small>Procedures</small>
-          Otros
-        </div>
+        <div>
+          <div class="title">
+            <small>Procedures</small>
+            Otros
+          </div>
 
-        <div class="desc">
-          Consiste en realizar una sección vertical del estómago, reduciendo su
-          contenido, de esta manera el paciente puede alimentarse con pocas
-          cantidades sin alterar el tránsito intestinal y así poder recuperar su
-          peso ideal.
-          <br /><br />
-          El procedimiento se realiza por Laparoscopia (Mínima Invasión), lo
-          cual implica cicatrices muy pequeñas, escaso dolor postoperatorio y un
-          breve periodo de hospitalización. Con la manga gástrica se espera que
-          al año de la operación el paciente pierda el máximo exceso de peso. Se
-          podrán apreciar mejoras en otras enfermedades coexistentes, como el
-          alto nivel de colesterol o triglicéridos, resistencia a la insulina,
-          diabetes, hipertensión, cardiopatías o apneas del sueño, entre otros.
-          <br /><br />
-          Tras la operación el equipo de Visión Bariátrica estará junto a usted,
-          para apoyarlo en cada control, examen, ayudarlo con los nuevos hábitos
-          de vida saludable, alimentación y ejercicios.
+          <div class="desc">
+            <p>
+              In Visión Bariátrica we are experts in minimally invasive surgery (laparoscopy) As we take care of diseases related to obesity and overweight
+            </p>
+            <p>
+              Such as:
+              <br>
+              <br>
+              Hernias (umbilical, inguinal, and abdominal wall)
+              Gastroesophageal reflux
+              Gallbladder lithiasis
+            </p>
+            <p>
+              Request your free weight loss consultation in Bariatric Vision at <a href="tel:81-81-04-16-80" target="_top">81-81-04-16-80</a> or <a href="tel:81-83-68-78-92" target="_top">81-83-68-78-92</a> or through WhatsApp at <a href="https://wa.me/5218187054284" target="_blank">+52 1 8187054284</a>.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <img src="../img/tomy.jpg" alt="" />
-      </div>
-    </div> -->
+
+    </div>
   </div>
   <!-- Procedimiento content -->
 
@@ -798,28 +847,33 @@
             <label for="tratamiento">Treatment of interest</label>
             <input type="text" name="tratamiento" id="tratamiento">
           </div>
-          <div class="form-input-third">
+          <div class="form-input">
             <div class="form-input">
               <label for="edad">Age</label>
               <input type="number" name="edad" id="edad" min="0" max="99">
             </div>
+          </div>
+          <div class="form-input-third">
+
             <div class="form-input">
-              <label for="peso">Weight <small>(Kg)</small></label>
-              <input type="number" name="peso" id="peso" min="30" max="300">
+              <label for="peso">Weight <small>(lb)</small></label>
+              <input type="number" name="pesolb" id="pesolb" min="1" max="300">
             </div>
             <div class="form-input">
-              <label for="estatura">Height <small>(Cm)</small></label>
-              <input type="number" name="estatura" id="estatura" min="50" max="220">
+              <label for="estatura">Height <small>(ft)</small></label>
+              <input type="number" name="estaturaft" id="estaturaft" min="1" max="220">
+            </div>
+            <div class="form-input">
+              <label for="estatura"><small>(inch)</small></label>
+              <input type="number" name="estaturainch" id="estaturainch" min="1" max="220">
             </div>
           </div>
-
-          <div class="form-input">
-            <label for="tratamiento">IMC</label>
-            <input type="text" name="imc" id="imc" readonly>
-          </div>
-
         </div>
         <div class="col">
+          <div class="form-input">
+            <label for="tratamiento">BMI</label>
+            <input type="text" name="imc" id="imc" readonly>
+          </div>
           <div class="form-input">
             <input type="submit" value="Send">
           </div>

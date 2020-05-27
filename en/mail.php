@@ -24,7 +24,7 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('jorge_qzg@hotmail.com', 'Mailer');
+    $mail->setFrom('jorge_qzg@hotmail.com', 'Visión Bariatrica');
     $mail->addAddress('jorge.a.qz96@gmail.com', 'Jorge Quezada');     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('jorge_qzg@hotmail.com', 'Information');
@@ -58,8 +58,8 @@ try {
       <center>
         <table style="width: 100%; max-width: 500px;">
           <thead>
-            <th>Nombre</th>
-            <th>Teléfono</th>
+            <th>Name</th>
+            <th>Phone</th>
             <th>Email</th>
           </thead>
           <tbody>
@@ -84,16 +84,18 @@ try {
         <br>
         <table style="width: 100%; max-width: 500px;">
           <thead>
-            <th>Edad</th>
-            <th>Peso</th>
-            <th>Estatura</th>
-            <th>IMC</th>
+            <th>Age</th>
+            <th>Weight (lb)</th>
+            <th>Heitgh (Ft)</th>
+            <th>Heitgh (Inch)</th>
+            <th>BMI</th>
           </thead>
           <tbody>
             <tr>
               <td align="center">'.$_POST['edad'].'</td>
-              <td align="center">'.$_POST['peso'].'</td>
-              <td align="center">'.$_POST['estatura'].'</td>
+              <td align="center">'.$_POST['pesolb'].'</td>
+              <td align="center">'.$_POST['estaturaft'].'</td>
+              <td align="center">'.$_POST['estaturainch'].'</td>
               <td align="center">'.$_POST['imc'].'</td>
             </tr>
           </tbody>

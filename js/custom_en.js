@@ -1,22 +1,91 @@
 $(document).ready(function () {
+
     //IMC
 
-    $('#estatura').on('change', function (e) {
+    $('#calcular_IMC').on('change', function (e) {
+        setIMC_C();
+    });
+
+    $('#estatura_ft').on('change', function (e) {
+        setIMC_C();
+    });
+
+    $('#estatura_inch').on('change', function (e) {
+        setIMC_C();
+    });
+
+
+    $('#peso_lb').on('change', function (e) {
+        setIMC_C();
+    });
+
+    function setIMC_C() {
+        let estatura_ft = $('#estatura_ft').val();
+        let estatura_inch = $('#estatura_inch').val();
+        let peso_lb = parseFloat($('#peso_lb').val());
+        let bmi;
+        let estatura
+
+        if (!isNaN(peso_lb) && !isNaN(estatura_ft) && !isNaN(estatura_inch)) {
+            estatura = parseFloat((estatura_ft * 12));
+            estatura = parseFloat(estatura) + parseFloat(estatura_inch);
+
+            bmi = (703 * peso_lb) / (Math.pow(estatura, 2));
+
+            if (!isNaN(bmi)) {
+                $('#bmi_c').val(parseFloat(bmi).toFixed(2));
+                $('#imc').val(parseFloat(bmi).toFixed(2));
+
+
+                if (bmi < 18.5) {
+                    response = "Underweight";
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    response = "Normal weight";
+
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    response = "Overweight";
+
+                } else {
+                    response = "Obesity";
+                }
+
+                $('#response_id').html(response);
+                $('#estaturainch').val(estatura_inch);
+                $('#estaturaft').val(estatura_ft);
+                $('#pesolb').val(peso_lb);
+            }
+        }
+
+
+    }
+
+
+    $('#estaturaft').on('change', function (e) {
+        setIMC();
+    });
+
+    $('#estaturainch').on('change', function (e) {
         setIMC();
     });
 
 
-    $('#peso').on('change', function (e) {
+    $('#pesolb').on('change', function (e) {
         setIMC();
     });
 
     function setIMC() {
-        let estatura = parseFloat($('#estatura').val()) / 100;
-        let peso = parseFloat($('#peso').val());
-        let imc;
-        if (!isNaN(peso) && !isNaN(estatura)) {
-            imc = peso / (Math.pow(estatura, 2));
-            $('#imc').val(parseFloat(imc).toFixed(2));
+        let estatura_ft = $('#estaturaft').val();
+        let estatura_inch = $('#estaturainch').val();
+        let peso_lb = parseFloat($('#pesolb').val());
+        let bmi;
+        let estatura
+
+        if (!isNaN(peso_lb) && !isNaN(estatura_ft) && !isNaN(estatura_inch)) {
+            estatura = parseFloat((estatura_ft * 12));
+            estatura = parseFloat(estatura) + parseFloat(estatura_inch);
+            console.log(estatura);
+            bmi = (703 * peso_lb) / (Math.pow(estatura, 2));
+            $('#imc').val(parseFloat(bmi).toFixed(2));
         }
     }
 
