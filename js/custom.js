@@ -1,6 +1,17 @@
 $(document).ready(function () {
     //IMC
 
+    $('#estatura_imc').on('change', function (e) {
+        setIMC_SEC();
+    });
+    $('#peso_imc').on('change', function (e) {
+        setIMC_SEC();
+    });
+
+    $('#caulcar_IMC').on('click', function (e) {
+        setIMC_SEC();
+    });
+
     $('#estatura').on('change', function (e) {
         setIMC();
     });
@@ -9,6 +20,36 @@ $(document).ready(function () {
     $('#peso').on('change', function (e) {
         setIMC();
     });
+
+    function setIMC_SEC() {
+        let estatura_imc = parseFloat($('#estatura_imc').val()) / 100;
+        let peso_imc = parseFloat($('#peso_imc').val());
+        let imc_imc;
+        let response;
+
+        if (!isNaN(peso_imc) && !isNaN(estatura_imc)) {
+            imc_imc = peso_imc / (Math.pow(estatura_imc, 2));
+            $('#imc_imc').val(parseFloat(imc_imc).toFixed(2));
+            $('#imc').val(parseFloat(imc_imc).toFixed(2));
+        }
+
+        if (imc_imc < 18.5) {
+            response = "Bajo de peso";
+        } else if (imc_imc >= 18.5 && imc_imc <= 24.9) {
+            response = "Normal";
+
+        } else if (imc_imc >= 25 && imc_imc <= 29.9) {
+            response = "Sobrepeso";
+
+        } else {
+            response = "Obesidad";
+        }
+
+        $('#response_id').html(response);
+        $('#estatura').val($('#estatura_imc').val());
+        $('#peso').val($('#peso_imc').val());
+
+    }
 
     function setIMC() {
         let estatura = parseFloat($('#estatura').val()) / 100;
