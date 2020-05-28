@@ -24,70 +24,17 @@ if ($captcha_success->success) {
   'Reply-To: '.$_POST["correo"]. "\r\n" .
   'X-Mailer: PHP/' . phpversion();
 
-  $cuerpo = '<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-        * {
-          font-family: Arial, Helvetica, sans-serif;
-        }
 
-      </style>
-    </head>
-
-    <body>
-      <center>
-        <table style="width: 100%; max-width: 500px;">
-          <thead>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td align="center">'.$_POST['nombre'].'</td>
-              <td align="center">'.$_POST['telefono'].'</td>
-              <td align="center">'.$_POST['correo'].'</td>
-            </tr>
-          </tbody>
-        </table>
-        <br>
-        <table style="width: 100%; max-width: 500px;">
-          <thead>
-            <th>Tratamiento de interes</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td align="center">'.$_POST['tratamiento'].'</td>
-            </tr>
-          </tbody>
-        </table>
-        <br>
-        <table style="width: 100%; max-width: 500px;">
-          <thead>
-            <th>Age</th>
-            <th>Weight (lb)</th>
-            <th>Heitgh (Ft)</th>
-            <th>Heitgh (Inch)</th>
-            <th>BMI</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td align="center">'.$_POST['edad'].'</td>
-              <td align="center">'.$_POST['pesolb'].'</td>
-              <td align="center">'.$_POST['estaturaft'].'</td>
-              <td align="center">'.$_POST['estaturainch'].'</td>
-              <td align="center">'.$_POST['imc'].'</td>
-            </tr>
-          </tbody>
-        </table>
-      </center>
-    </body>
-    </html>
-    ';
+  $cuerpo .= "Name: ".$_POST["nombre"] . "\n";
+  $cuerpo .= "Phone: " .$_POST["telefono"] . "\n";
+  $cuerpo .= "EMail: " .$_POST["correo"] . "\n";
+  $cuerpo .= "\n";
+  $cuerpo .= "Treatment: ".$_POST["tratamiento"] . "\n";
+  $cuerpo .= "\n";
+  $cuerpo .= "Age: " .$_POST["edad"] . "\n";
+  $cuerpo .= "Weight: " .$_POST["pesolb"] . "\n";
+  $cuerpo .= "Height: " .$_POST["estaturaft"] ."ft " .$_POST["estaturainch"] . "in"."\n";
+  $cuerpo .= "BMI: " .$_POST["imc"] . "\n";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     mail("jorge_qzg@hotmail.com","Contacto VisiÃ³n BariÃ¡trica",$cuerpo,$cabeceras);

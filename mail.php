@@ -26,68 +26,16 @@ if ($captcha_success->success) {
   'Reply-To: '.$_POST["correo"]. "\r\n" .
   'X-Mailer: PHP/' . phpversion();
 
-  $cuerpo = '<!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      * {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-    </style>
-  </head>
-
-  <body>
-    <center>
-      <table style="width: 100%; max-width: 500px;">
-        <thead>
-          <th>Nombre</th>
-          <th>Teléfono</th>
-          <th>Email</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="center">'.$_POST['nombre'].'</td>
-            <td align="center">'.$_POST['telefono'].'</td>
-            <td align="center">'.$_POST['correo'].'</td>
-          </tr>
-        </tbody>
-      </table>
-      <br>
-      <table style="width: 100%; max-width: 500px;">
-        <thead>
-          <th>Tratamiento de interes</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="center">'.$_POST['tratamiento'].'</td>
-          </tr>
-        </tbody>
-      </table>
-      <br>
-      <table style="width: 100%; max-width: 500px;">
-        <thead>
-          <th>Edad</th>
-          <th>Peso</th>
-          <th>Estatura</th>
-          <th>IMC</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="center">'.$_POST['edad'].'</td>
-            <td align="center">'.$_POST['peso'].'</td>
-            <td align="center">'.$_POST['estatura'].'</td>
-            <td align="center">'.$_POST['imc'].'</td>
-          </tr>
-        </tbody>
-      </table>
-    </center>
-  </body>
-  </html>
-';
+        $cuerpo .= "Nombre: ".$_POST["nombre"] . "\n";
+				$cuerpo .= "TelÃ©fono: " .$_POST["telefono"] . "\n";
+				$cuerpo .= "Correo: " .$_POST["correo"] . "\n";
+        $cuerpo .= "\n";
+        $cuerpo .= "Tratamiento: ".$_POST["tratamiento"] . "\n";
+        $cuerpo .= "\n";
+				$cuerpo .= "Edad: " .$_POST["edad"] . "\n";
+				$cuerpo .= "Peso: " .$_POST["peso"] . "\n";
+				$cuerpo .= "Estatura: " .$_POST["Estatura"] . "\n";
+				$cuerpo .= "IMC: " .$_POST["imc"] . "\n";
 // mail("contacto@visionbariatrica.com","Contacto VisiÃ³n BariÃ¡trica",$cuerpo,$cabeceras);
 mail("jorge_qzg@hotmail.com","Contacto VisiÃ³n BariÃ¡trica",$cuerpo,$cabeceras);
 $data['type'] = 'success';
