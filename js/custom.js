@@ -136,6 +136,10 @@ $(document).ready(function () {
     function CheckForm() {
         let errors = 0;
         const inputs = $('#contact-form input');
+        let recaptcha = $('#g-recaptcha-response').val();
+
+
+        if (recaptcha == '' || !recaptcha) { errors++; }
 
         $('#errors-display').html('');
         inputs.each(function (index, element) {
@@ -188,9 +192,6 @@ $(document).ready(function () {
                 * Se ejecuta cuando termina la petición y esta ha sido
                 * correcta
                 * */
-
-                // console.log(result);
-
 
                 if (result['type'] === 'success') {
 

@@ -160,6 +160,8 @@ $(document).ready(function () {
     function CheckForm() {
         let errors = 0;
         const inputs = $('#contact-form input');
+        let recaptcha = $('#g-recaptcha-response').val();
+        if (recaptcha == '' || !recaptcha) { errors++; }
 
         $('#errors-display').html('');
         inputs.each(function (index, element) {
@@ -178,7 +180,7 @@ $(document).ready(function () {
             $('#errors-display').fadeIn().html('A field is empty.');
             return false;
         } else if (errors > 1) {
-            $('#errors-display').fadeIn().html('ASome fields are empty.');
+            $('#errors-display').fadeIn().html('Some fields are empty.');
             return false;
 
         } else {
